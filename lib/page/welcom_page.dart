@@ -16,7 +16,6 @@ class _WelcomePageState extends State<WelcomePage> {
     "welcome1.png",
     "welcome2.png",
   ];
-  List text = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +32,7 @@ class _WelcomePageState extends State<WelcomePage> {
               image: AssetImage("img/" + images[index]),
             )),
             child: Container(
-              margin: const EdgeInsets.only(top: 550, left: 20, right: 20),
+              margin: const EdgeInsets.only(top: 450, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -43,24 +42,37 @@ class _WelcomePageState extends State<WelcomePage> {
                       AppLargeText(text: "FEEL THE SENSATION OF"),
                       AppText(
                         text: "HEAVEN IN THE WORLD",
-                        size: 25,
+                        size: 28,
                       ),
+                      // ignore: prefer_const_constructors
                       SizedBox(
-                        height: 20,
+                        height: 2,
                       ),
-                      ResponsiveButton(),
+                      // ignore: sized_box_for_whitespace
+                      Container(
+                        width: 250,
+                        child: AppLargeText(
+                          text: "Welcome To Indonesia",
+                          size: 14,
+                        ),
+                      ),
+                      // ignore: prefer_const_constructors
+                      SizedBox(
+                        height: 40,
+                      ),
+                      ResponsiveButton()
                     ],
                   ),
                   Column(
                       children: List.generate(
-                    3,
+                    2,
                     (indexDots) {
                       return Container(
                         margin: const EdgeInsets.only(bottom: 2),
                         width: 8,
-                        height: indexDots == indexDots ? 25 : 8,
+                        height: indexDots == indexDots ? 20 : 8,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(20),
                           color: index == indexDots
                               ? AppColors.buttonbg
                               : AppColors.buttonbg.withOpacity(0.3),
